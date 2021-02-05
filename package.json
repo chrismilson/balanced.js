@@ -1,14 +1,14 @@
 {
-  "name": "@shlappas/balanced",
-  "version": "1.0.1",
-  "description": "A generic self-balancing binary tree",
+  "name": "@shlappas/rotating-tree",
+  "version": "1.0.0",
+  "description": "Methods for rotating binary tree nodes",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrismilson/balanced.js.git"
+    "url": "git+https://github.com/chrismilson/rotating-tree.js.git"
   },
   "bugs": {
-    "url": "https://github.com/chrismilson/balanced.js/issues"
+    "url": "https://github.com/chrismilson/rotating-tree.js/issues"
   },
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -43,10 +43,7 @@
     "tree",
     "binary tree",
     "binary search tree",
-    "bst",
-    "red black",
-    "AVL",
-    "weight balanced"
+    "bst"
   ],
   "devDependencies": {
     "@types/jest": "^26.0.20",

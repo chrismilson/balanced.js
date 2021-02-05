@@ -1,10 +1,10 @@
 /**
  * A generic interface for a self balancing node.
  */
-export interface SBTNode<T> {
+export interface RTNode<T> {
   data: T
-  left?: SBTNode<T>
-  right?: SBTNode<T>
+  left?: RTNode<T>
+  right?: RTNode<T>
 }
 
 /**
@@ -37,9 +37,9 @@ export interface SBTNode<T> {
  * @returns The node `b`
  */
 export function singleLeft<T>(
-  a: SBTNode<T>,
-  onRotate?: (a: SBTNode<T>, b: SBTNode<T>) => void
-): SBTNode<T> {
+  a: RTNode<T>,
+  onRotate?: (a: RTNode<T>, b: RTNode<T>) => void
+): RTNode<T> {
   if (a.right === undefined) return a
   const b = a.right
 
@@ -82,9 +82,9 @@ export function singleLeft<T>(
  * @returns The node b
  */
 export function singleRight<T>(
-  c: SBTNode<T>,
-  onRotate?: (c: SBTNode<T>, b: SBTNode<T>) => void
-): SBTNode<T> {
+  c: RTNode<T>,
+  onRotate?: (c: RTNode<T>, b: RTNode<T>) => void
+): RTNode<T> {
   if (c.left === undefined) return c
   const b = c.left
 
@@ -129,10 +129,10 @@ export function singleRight<T>(
  * @returns The node b
  */
 export function doubleLeft<T>(
-  a: SBTNode<T>,
-  onLeft?: (a: SBTNode<T>, b: SBTNode<T>) => void,
-  onRight?: (c: SBTNode<T>, b: SBTNode<T>) => void
-): SBTNode<T> {
+  a: RTNode<T>,
+  onLeft?: (a: RTNode<T>, b: RTNode<T>) => void,
+  onRight?: (c: RTNode<T>, b: RTNode<T>) => void
+): RTNode<T> {
   if (a.right === undefined) return a
   a.right = singleRight(a.right, onRight)
   return singleLeft(a, onLeft)
@@ -170,10 +170,10 @@ export function doubleLeft<T>(
  * @returns The node b
  */
 export function doubleRight<T>(
-  c: SBTNode<T>,
-  onLeft?: (a: SBTNode<T>, b: SBTNode<T>) => void,
-  onRight?: (c: SBTNode<T>, b: SBTNode<T>) => void
-): SBTNode<T> {
+  c: RTNode<T>,
+  onLeft?: (a: RTNode<T>, b: RTNode<T>) => void,
+  onRight?: (c: RTNode<T>, b: RTNode<T>) => void
+): RTNode<T> {
   if (c.left === undefined) return c
   c.left = singleLeft(c.left, onLeft)
   return singleRight(c, onRight)
@@ -186,26 +186,26 @@ export function doubleRight<T>(
  * @param onLeft The function to call on nodes before they are rotated left
  * @param onRight The function to call on nodes before they are rotated right.
  */
-export function useBalancedTree<T>(
-  onLeft: (a: SBTNode<T>, b: SBTNode<T>) => void,
-  onRight: (c: SBTNode<T>, b: SBTNode<T>) => void
+export function useRotatingTree<T>(
+  onLeft: (a: RTNode<T>, b: RTNode<T>) => void,
+  onRight: (c: RTNode<T>, b: RTNode<T>) => void
 ): {
-  singleLeft(a: SBTNode<T>): SBTNode<T>
-  singleRight(c: SBTNode<T>): SBTNode<T>
-  doubleLeft(a: SBTNode<T>): SBTNode<T>
-  doubleRight(c: SBTNode<T>): SBTNode<T>
+  singleLeft(a: RTNode<T>): RTNode<T>
+  singleRight(c: RTNode<T>): RTNode<T>
+  doubleLeft(a: RTNode<T>): RTNode<T>
+  doubleRight(c: RTNode<T>): RTNode<T>
 } {
   return {
-    singleLeft(a: SBTNode<T>) {
+    singleLeft(a: RTNode<T>) {
       return singleLeft(a, onLeft)
     },
-    singleRight(c: SBTNode<T>) {
+    singleRight(c: RTNode<T>) {
       return singleRight(c, onRight)
     },
-    doubleLeft(a: SBTNode<T>) {
+    doubleLeft(a: RTNode<T>) {
       return doubleLeft(a, onLeft, onRight)
     },
-    doubleRight(c: SBTNode<T>) {
+    doubleRight(c: RTNode<T>) {
       return doubleRight(c, onLeft, onRight)
     },
   }

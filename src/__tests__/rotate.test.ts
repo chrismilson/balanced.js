@@ -8,7 +8,7 @@ import {
   rightMiddleHeavy,
 } from '../common'
 
-describe('balancing tree', () => {
+describe('rotating tree', () => {
   describe.each([
     ['single left', deepCopy(rightHeavy), singleLeft],
     ['single right', deepCopy(leftHeavy), singleRight],

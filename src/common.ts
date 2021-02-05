@@ -1,16 +1,14 @@
-import { SBTNode } from '.'
+import { RTNode } from '.'
 
 /**
  * Returns a deep copy of a weight balanced tree.
  */
 export function deepCopy(root: undefined): undefined
-export function deepCopy<N extends SBTNode<unknown>>(root: N): N
+export function deepCopy<N extends RTNode<unknown>>(root: N): N
+export function deepCopy<T>(root: RTNode<T> | undefined): RTNode<T> | undefined
 export function deepCopy<T>(
-  root: SBTNode<T> | undefined
-): SBTNode<T> | undefined
-export function deepCopy<T>(
-  root: SBTNode<T> | undefined
-): SBTNode<T> | undefined {
+  root: RTNode<T> | undefined
+): RTNode<T> | undefined {
   return (
     root && {
       ...root,

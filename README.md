@@ -1,4 +1,4 @@
-# `balanced.js`
+# `rotating-tree.js`
 
 A simple generic module that allows the manipulation of binary tree nodes via
 four rotation methods:
@@ -10,16 +10,16 @@ four rotation methods:
 
 ## Installation
 
-Just install it with your favourit package manager!
+Just install it with your favourite package manager!
 
 ### `yarn`
 
 ```bash
-yarn add @shlappas/balanced
+yarn add @shlappas/rotating-tree
 ```
 
 ### `npm`
 
 ```bash
-npm install @shlappas/balanced
+npm install @shlappas/rotating-tree
 ```
