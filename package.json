@@ -1,14 +1,14 @@
 {
   "name": "@shlappas/balanced",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A generic self-balancing binary tree",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrismilson/balanced.git"
+    "url": "git+https://github.com/chrismilson/balanced.js.git"
   },
   "bugs": {
-    "url": "https://github.com/chrismilson/balanced/issues"
+    "url": "https://github.com/chrismilson/balanced.js/issues"
   },
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
