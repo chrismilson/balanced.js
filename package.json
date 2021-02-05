@@ -1,6 +1,6 @@
 {
   "name": "@shlappas/balanced",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A generic self-balancing binary tree",
   "license": "MIT",
   "repository": {
@@ -22,7 +22,8 @@
     "fix": "yarn lint --fix",
     "prebuild": "yarn lint",
     "build": "rollup -c",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "yarn build"
   },
   "jest": {
     "roots": [
