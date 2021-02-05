@@ -39,7 +39,7 @@ export interface SBTNode<T> {
 export function singleLeft<T>(
   a: SBTNode<T>,
   onRotate?: (a: SBTNode<T>, b: SBTNode<T>) => void
-) {
+): SBTNode<T> {
   if (a.right === undefined) return a
   const b = a.right
 
