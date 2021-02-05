@@ -23,3 +23,34 @@ yarn add @shlappas/rotating-tree
 ```bash
 npm install @shlappas/rotating-tree
 ```
+
+## Usage
+
+Set up a simple binary tree:
+
+```js
+// a
+//  \
+//   b
+//    \
+//     c
+const bst = {
+  data: 1,
+  right: {
+    data: 2,
+    right: {
+      data: 3
+    }
+  }
+}
+```
+
+Rotate your bst with the included methods. For example, we could balance our bst from before:
+
+```js
+//   b
+//  / \
+// a   c
+// Note: this mutates the original tree; the object `bst` is now { data: 1 }.
+const root = singleLeft(bst)
+```
